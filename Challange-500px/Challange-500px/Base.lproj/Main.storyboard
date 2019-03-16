@@ -36,21 +36,21 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="44" maxX="0.0" maxY="0.0"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WkW-Jq-34u">
-                            <size key="itemSize" width="145" height="145"/>
+                            <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="10" maxX="10" maxY="0.0"/>
+                            <inset key="sectionInset" minX="15" minY="10" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCollectionViewCell" id="5i9-Iw-bdv" customClass="PicCollectionViewCell">
-                                <rect key="frame" x="5" y="10" width="145" height="145"/>
+                                <rect key="frame" x="15" y="10" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-5m-8ds">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -62,7 +62,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imgView" destination="qDD-5m-8ds" id="WrE-7S-L7i"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showDetail" id="pWe-w6-p0P"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showDetail" id="ue6-FP-rgg"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -86,20 +86,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qi0-DF-y0f">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="480"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="480"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="480" id="Ei4-gK-bpZ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qi0-DF-y0f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4sA-em-RhM"/>
+                            <constraint firstItem="qi0-DF-y0f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PPW-dT-46W"/>
                             <constraint firstAttribute="trailing" secondItem="qi0-DF-y0f" secondAttribute="trailing" id="Wr1-BM-tfo"/>
                             <constraint firstItem="qi0-DF-y0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="haj-A5-gRr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Y33-Fc-ZZC"/>
                     <connections>
                         <outlet property="detailImgView" destination="qi0-DF-y0f" id="e9v-rN-DOo"/>
                     </connections>

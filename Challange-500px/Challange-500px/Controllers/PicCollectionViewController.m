@@ -10,14 +10,17 @@
 #import "PicDetailViewController.h"
 #import "PicCollectionViewCell.h"
 #import "BaseHttp.h"
+#import "UIHelper.h"
 #import "AppDelegate.h"
 
 #define BASE_URL @"https://api.500px.com/v1/photos?feature="
 #define FEATURE  @"popular"
+#define CONSUMER_KEY @"P7LLhKkPAnPUpbfAXk3Jq2iDjYmCx87zgfEDxQVS"
 
 @interface PicCollectionViewController ()
 @property (strong, nonatomic) NSMutableArray *objectChanges;
 @property (strong, nonatomic)NSMutableArray *sectionChanges;
+@property (nonatomic) UIHelper *myUIHelper;
 @end
 
 @implementation PicCollectionViewController
@@ -35,17 +38,15 @@ static NSString * const reuseIdentifier = @"PicCollectionViewCell";
     self.title = @"Popular-500px";
     _objectChanges = [[NSMutableArray alloc]init];
     _sectionChanges = [[NSMutableArray alloc]init];
-    self.collectionView.delegate = self;
+    self.myUIHelper = [[UIHelper alloc] init];
     id appDelegate = (id)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [appDelegate managedObjectContext];
-    [self getPopularImage:@"P7LLhKkPAnPUpbfAXk3Jq2iDjYmCx87zgfEDxQVS"];
-    // Register cell classes
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self getPopularImage];
 }
 
--(void)getPopularImage:(NSString *)conKey
+-(void)getPopularImage
 {
-    NSString *url = [NSString stringWithFormat:@"%@%@%s%@",BASE_URL,FEATURE,"&consumer_key=",conKey];
+    NSString *url = [NSString stringWithFormat:@"%@%@%s%@%s",BASE_URL,FEATURE,"&consumer_key=",CONSUMER_KEY,"&image_size=3"];
     
     BaseHttp *baseHttp = [[BaseHttp alloc] init];
     
@@ -57,7 +58,7 @@ static NSString * const reuseIdentifier = @"PicCollectionViewCell";
             jsonData = [NSJSONSerialization JSONObjectWithData:data options:0 error: &error];
             [self userDataFromDictionary:jsonData];
         }else{
-            [[[UIAlertView alloc] initWithTitle:@"Couldn't fetch from 500px." message:error.localizedDescription delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] show];
+            [self.myUIHelper showSimpleAlertController:@"Couldn't fetch from 500px." errorMessage:error.localizedDescription viewController:self];
             return;
         }
     }];
@@ -89,9 +90,11 @@ static NSString * const reuseIdentifier = @"PicCollectionViewCell";
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] objectAtIndex:0];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        PicDetailViewController *vc =[segue destinationViewController];
+        vc.imgName = [object valueForKey:@"imgName"];
+        vc.imgData = [object valueForKey:@"imgUrlData"];
     }
 }
 
@@ -108,6 +111,11 @@ static NSString * const reuseIdentifier = @"PicCollectionViewCell";
     
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [cell setImage:[UIImage imageWithData:[object valueForKey:@"imgUrlData"]]];
+    long itemCount = [self.fetchedResultsController.fetchedObjects count];
+    
+    if(indexPath.row == itemCount-1) {
+       [self getPopularImage];
+    }
     
     return cell;
 }

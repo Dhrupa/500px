@@ -10,9 +10,10 @@
 
 @interface PicDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
-
 @property (weak, nonatomic) IBOutlet UIImageView *detailImgView;
+@property NSString *imgName;
+@property NSData *imgData;
+
 @end
 
 

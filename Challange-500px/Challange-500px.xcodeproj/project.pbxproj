@@ -19,6 +19,7 @@
 		5D17131F223C7AA500675B7B /* BaseHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D17131E223C7AA500675B7B /* BaseHttp.m */; };
 		5D171323223C7BC800675B7B /* GenericNotificationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D171322223C7BC800675B7B /* GenericNotificationEvent.m */; };
 		5D171327223C7D7700675B7B /* NetworkQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D171326223C7D7700675B7B /* NetworkQueueManager.m */; };
+		5D171332223D5FA700675B7B /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D171331223D5FA700675B7B /* UIHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		5D171322223C7BC800675B7B /* GenericNotificationEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenericNotificationEvent.m; sourceTree = "<group>"; };
 		5D171325223C7D7700675B7B /* NetworkQueueManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkQueueManager.h; sourceTree = "<group>"; };
 		5D171326223C7D7700675B7B /* NetworkQueueManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkQueueManager.m; sourceTree = "<group>"; };
+		5D171330223D5FA700675B7B /* UIHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
+		5D171331223D5FA700675B7B /* UIHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		5D17131A223C795900675B7B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D17132F223D5F8900675B7B /* Helper */,
 				5D171320223C7B9F00675B7B /* Misc */,
 				5D1712F9223B3F3700675B7B /* AppDelegate.h */,
 				5D1712FA223B3F3700675B7B /* AppDelegate.m */,
@@ -145,6 +149,15 @@
 				5D171326223C7D7700675B7B /* NetworkQueueManager.m */,
 			);
 			path = Singletons;
+			sourceTree = "<group>";
+		};
+		5D17132F223D5F8900675B7B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5D171330223D5FA700675B7B /* UIHelper.h */,
+				5D171331223D5FA700675B7B /* UIHelper.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +237,7 @@
 				5D171323223C7BC800675B7B /* GenericNotificationEvent.m in Sources */,
 				5D17130C223B3F3A00675B7B /* main.m in Sources */,
 				5D171318223B4E3B00675B7B /* PicCollectionViewCell.m in Sources */,
+				5D171332223D5FA700675B7B /* UIHelper.m in Sources */,
 				5D171304223B3F3700675B7B /* Challange_500px.xcdatamodeld in Sources */,
 				5D171314223B402A00675B7B /* PicCollectionViewController.m in Sources */,
 			);
@@ -369,7 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H2NY762347;
+				DEVELOPMENT_TEAM = X6WR87SMS6;
 				INFOPLIST_FILE = "Challange-500px/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H2NY762347;
+				DEVELOPMENT_TEAM = X6WR87SMS6;
 				INFOPLIST_FILE = "Challange-500px/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

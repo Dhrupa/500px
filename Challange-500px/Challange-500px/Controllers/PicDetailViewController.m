@@ -14,24 +14,11 @@
 
 @implementation PicDetailViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (self.detailItem != newDetailItem) {
-        self.detailItem = newDetailItem;
-        // Update the view.
-        [self updateDetailView];
-    }
-}
 
 - (void)updateDetailView
 {
-    if (self.detailItem)
-    {
-        self.detailImgView.image = [UIImage imageWithData:[self.detailItem valueForKey:@"imgUrlData"]];
-        self.title = [self.detailItem valueForKey:@"imgName"];
-    }
+    self.detailImgView.image = [UIImage imageWithData:self.imgData];
+    self.title = self.imgName;
 }
 
 - (void)viewDidLoad {

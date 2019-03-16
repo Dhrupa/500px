@@ -16,6 +16,9 @@
 		5D17130C223B3F3A00675B7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D17130B223B3F3A00675B7B /* main.m */; };
 		5D171314223B402A00675B7B /* PicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D171313223B402A00675B7B /* PicCollectionViewController.m */; };
 		5D171318223B4E3B00675B7B /* PicCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D171317223B4E3B00675B7B /* PicCollectionViewCell.m */; };
+		5D17131F223C7AA500675B7B /* BaseHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D17131E223C7AA500675B7B /* BaseHttp.m */; };
+		5D171323223C7BC800675B7B /* GenericNotificationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D171322223C7BC800675B7B /* GenericNotificationEvent.m */; };
+		5D171327223C7D7700675B7B /* NetworkQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D171326223C7D7700675B7B /* NetworkQueueManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,12 @@
 		5D171313223B402A00675B7B /* PicCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicCollectionViewController.m; sourceTree = "<group>"; };
 		5D171316223B4E3B00675B7B /* PicCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicCollectionViewCell.h; sourceTree = "<group>"; };
 		5D171317223B4E3B00675B7B /* PicCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicCollectionViewCell.m; sourceTree = "<group>"; };
+		5D17131D223C7AA500675B7B /* BaseHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHttp.h; sourceTree = "<group>"; };
+		5D17131E223C7AA500675B7B /* BaseHttp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHttp.m; sourceTree = "<group>"; };
+		5D171321223C7BC800675B7B /* GenericNotificationEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericNotificationEvent.h; sourceTree = "<group>"; };
+		5D171322223C7BC800675B7B /* GenericNotificationEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenericNotificationEvent.m; sourceTree = "<group>"; };
+		5D171325223C7D7700675B7B /* NetworkQueueManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkQueueManager.h; sourceTree = "<group>"; };
+		5D171326223C7D7700675B7B /* NetworkQueueManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkQueueManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,14 +75,10 @@
 		5D1712F8223B3F3700675B7B /* Challange-500px */ = {
 			isa = PBXGroup;
 			children = (
-				5D171316223B4E3B00675B7B /* PicCollectionViewCell.h */,
-				5D171317223B4E3B00675B7B /* PicCollectionViewCell.m */,
-				5D171312223B402A00675B7B /* PicCollectionViewController.h */,
-				5D171313223B402A00675B7B /* PicCollectionViewController.m */,
-				5D1712F9223B3F3700675B7B /* AppDelegate.h */,
-				5D1712FA223B3F3700675B7B /* AppDelegate.m */,
-				5D1712FC223B3F3700675B7B /* PicDetailViewController.h */,
-				5D1712FD223B3F3700675B7B /* PicDetailViewController.m */,
+				5D171324223C7D5100675B7B /* Singletons */,
+				5D17131B223C79BC00675B7B /* Controllers */,
+				5D17131A223C795900675B7B /* Supporting Files */,
+				5D171319223C794E00675B7B /* Networking */,
 				5D1712FF223B3F3700675B7B /* Main.storyboard */,
 				5D171305223B3F3A00675B7B /* Assets.xcassets */,
 				5D171307223B3F3A00675B7B /* LaunchScreen.storyboard */,
@@ -82,6 +87,64 @@
 				5D171302223B3F3700675B7B /* Challange_500px.xcdatamodeld */,
 			);
 			path = "Challange-500px";
+			sourceTree = "<group>";
+		};
+		5D171319223C794E00675B7B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5D17131D223C7AA500675B7B /* BaseHttp.h */,
+				5D17131E223C7AA500675B7B /* BaseHttp.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5D17131A223C795900675B7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D171320223C7B9F00675B7B /* Misc */,
+				5D1712F9223B3F3700675B7B /* AppDelegate.h */,
+				5D1712FA223B3F3700675B7B /* AppDelegate.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D17131B223C79BC00675B7B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D17131C223C79F200675B7B /* CollectionCell */,
+				5D171312223B402A00675B7B /* PicCollectionViewController.h */,
+				5D171313223B402A00675B7B /* PicCollectionViewController.m */,
+				5D1712FC223B3F3700675B7B /* PicDetailViewController.h */,
+				5D1712FD223B3F3700675B7B /* PicDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5D17131C223C79F200675B7B /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D171316223B4E3B00675B7B /* PicCollectionViewCell.h */,
+				5D171317223B4E3B00675B7B /* PicCollectionViewCell.m */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		5D171320223C7B9F00675B7B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				5D171321223C7BC800675B7B /* GenericNotificationEvent.h */,
+				5D171322223C7BC800675B7B /* GenericNotificationEvent.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		5D171324223C7D5100675B7B /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				5D171325223C7D7700675B7B /* NetworkQueueManager.h */,
+				5D171326223C7D7700675B7B /* NetworkQueueManager.m */,
+			);
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +219,9 @@
 			files = (
 				5D1712FE223B3F3700675B7B /* PicDetailViewController.m in Sources */,
 				5D1712FB223B3F3700675B7B /* AppDelegate.m in Sources */,
+				5D171327223C7D7700675B7B /* NetworkQueueManager.m in Sources */,
+				5D17131F223C7AA500675B7B /* BaseHttp.m in Sources */,
+				5D171323223C7BC800675B7B /* GenericNotificationEvent.m in Sources */,
 				5D17130C223B3F3A00675B7B /* main.m in Sources */,
 				5D171318223B4E3B00675B7B /* PicCollectionViewCell.m in Sources */,
 				5D171304223B3F3700675B7B /* Challange_500px.xcdatamodeld in Sources */,
@@ -301,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H2NY762347;
 				INFOPLIST_FILE = "Challange-500px/Info.plist";
@@ -310,6 +377,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "patel.Challange-500px";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -318,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H2NY762347;
 				INFOPLIST_FILE = "Challange-500px/Info.plist";
@@ -327,6 +396,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "patel.Challange-500px";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

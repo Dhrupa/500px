@@ -14,12 +14,6 @@
 
 @implementation PicDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-     // Update the view.
-    [self updateDetailView];
-}
-
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
@@ -40,5 +34,16 @@
     }
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Update the view.
+    [self updateDetailView];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

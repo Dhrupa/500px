@@ -15,7 +15,7 @@
 
 #define BASE_URL @"https://api.500px.com/v1/photos?feature="
 #define FEATURE  @"popular"
-#define CONSUMER_KEY @"P7LLhKkPAnPUpbfAXk3Jq2iDjYmCx87zgfEDxQVS"
+#define CONSUMER_KEY @"Use your consumerkey here"
 
 @interface PicCollectionViewController ()
 @property (strong, nonatomic) NSMutableArray *objectChanges;

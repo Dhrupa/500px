@@ -11,5 +11,8 @@ Here  I have tried user still continuely able to browse photos but as i can only
 ### Task 2 - Photo Details
 When user clicks on a photo on the grid, a full screen version of the photo should be displayed along with more detailed information about the photo, such as its title.
 
-Use this opportunity to show us what you’re good at in addition to coding.
+
+Also if you try to build in realdevice and it not leting you do taht  than just follow the steps mentioned here
+on topmenu you will see option for xcode selecet 
+Product> Scheme > EditScheme> uncheck DebugExecutable
 
